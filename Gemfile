@@ -18,6 +18,7 @@ gem 'pry'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'omniauth'
 gem 'devise_token_auth'
+gem 'foreman', '~> 0.82.0'
 
 group :development, :test do
   gem 'byebug'
