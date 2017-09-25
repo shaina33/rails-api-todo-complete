@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Auth from 'j-toker';
 
 class App extends Component {
   TestAPI() {
+    Auth.configure({
+      apiUrl: 'localhost:3000'
+    });
     fetch('/api/users').then((data) => {console.log(data)});
   };
 
