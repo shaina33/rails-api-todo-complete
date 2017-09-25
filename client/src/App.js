@@ -6,9 +6,14 @@ import Auth from 'j-toker';
 class App extends Component {
   TestAPI() {
     Auth.configure({
-      apiUrl: 'localhost:3000'
+      apiUrl: '/api'
     });
-    fetch('/api/users').then((data) => {console.log(data)});
+
+
+    Auth.emailSignIn({
+      email: 'foo@bar.com',
+      password: 'password'
+    });
   };
 
   render() {
