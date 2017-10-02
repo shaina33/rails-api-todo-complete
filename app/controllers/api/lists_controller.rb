@@ -1,10 +1,9 @@
 class Api::ListsController < ApiController
-  before_action :authenticated?
+  before_action :authenticate_user!
 
   def index
     # Find out why current_api_user is not working
-    user_id = params[:user_id] || current_api_user.id
-    lists = List.where(user_id: user_id)
+    lists = List.where(user_id: current_user)
     render json: lists, each_serializer: ListSerializer
   end
 
